@@ -1,6 +1,6 @@
 # P2Pix Explorer
 
-An application for visualizing smart contract activity from the P2PIX protocol using The Graph Protocol. P2Pix Explorer provides real-time insights into deposits, locks, releases, and user activities across Sepolia and Rootstock networks.
+An application for visualizing smart contract activity from the P2Pix using The Graph Protocol. P2Pix Explorer provides real-time insights into deposits, locks, releases, and user activities across different networks.
 
 ## ✨ Features
 
@@ -8,7 +8,7 @@ An application for visualizing smart contract activity from the P2PIX protocol u
 - **Wallet Address Search**: Search for specific user activities by wallet address
 - **Transaction Type Filtering**: Filter by deposits, locks, releases, or view all
 - **Real-time Search**: Instant results as you type
-- **Clear Search**: Easy reset functionality
+
 
 ### 📊 **Activity Visualization**
 - **Unified Transaction List**: Combined view of all transaction types
