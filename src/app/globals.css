@@ -1,26 +1,123 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(ellipse at 50% -50%, rgba(49, 46, 129, 1) 60%, rgba(24, 30, 42, 1) 80%);
+  color: #ffffff;
+  min-height: 100vh;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* P2Pix Design System Components */
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary-400 text-text-dark font-semibold px-4 py-2 rounded-button hover:bg-primary-500 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface-card text-text-dark font-medium px-4 py-2 rounded-button border border-gray-300 hover:bg-gray-100 transition-colors duration-200;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-primary-400 border-2 border-primary-400 font-semibold px-4 py-2 rounded-button hover:bg-primary-400 hover:text-text-dark transition-all duration-200;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-surface-card rounded-card shadow-card border border-gray-200;
+  }
+  
+  .card-dark {
+    @apply bg-white/5 backdrop-blur-sm rounded-card border border-white/10;
+  }
+
+  /* Status Badges */
+  .badge-open {
+    @apply bg-status-open text-white text-xs font-medium px-2 py-1 rounded-full;
+  }
+  
+  .badge-completed {
+    @apply bg-status-completed text-white text-xs font-medium px-2 py-1 rounded-full;
+  }
+  
+  .badge-expired {
+    @apply bg-status-expired text-white text-xs font-medium px-2 py-1 rounded-full;
+  }
+
+  /* Text Styles */
+  .text-primary {
+    @apply text-text-primary;
+  }
+  
+  .text-secondary {
+    @apply text-text-secondary;
+  }
+  
+  .text-dark {
+    @apply text-text-dark;
+  }
+
+  /* Layout Components */
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .header-glass {
+    @apply bg-white/5 backdrop-blur-sm border-b border-white/10;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.7);
 }
